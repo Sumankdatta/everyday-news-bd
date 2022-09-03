@@ -11,11 +11,11 @@ const displayNews = newsitems => {
   
 const creatDiv=document.createElement('div');
 creatDiv.innerHTML=`
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-     <li class="nav-item">
-          <a onclick="loadNewsTitle('${news.category_id}')" class="nav-link active" aria-current="page" href="#">${news.category_name}</a>
-     </li>                         
- </ul>`
+<div class="navbar-nav">
+              <a onclick="loadNewsTitle('${news.category_id}')"class="nav-link active" aria-current="page" href="#">${news.category_name}</a>
+             
+            </div>
+`
      newsContainer.appendChild(creatDiv)
   })
 
@@ -33,36 +33,44 @@ const loadNewsTitle=(category_id)=>{
 
 const newsTitle=newsCards=>{
    
-    const cardContainer=document.getElementById('card');
+    const cardContainer=document.getElementById('cards');
     cardContainer.innerHTML=``;
     newsCards.forEach(cards =>{
       console.log(cards)
     
    const creatNewDiv=document.createElement('div');
    creatNewDiv.innerHTML=`
-   <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="${cards.image_url}" class="img-fluid rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">${cards.title}</h5>
-                      <p class="card-text">${cards.details.slice(0,200)}...</p>
-                     <div class="d-flex justify-content-around">
-                     <div>
-                     <p>${cards}</p>
-                     <p>${cards.author.name}</p>
-                     </div>
-                     <div>
-                     <p>${cards.total_view}</p>
-                     </div>
-                     </div>
+  <div class="row g-0 mb-5" style="border-top:1px solid gray;border-bottom:1px solid gray;">
+          <div class="col-md-4 px-4">
+            <img src="${cards.image_url}" class="img-fluid rounded-start me-5" style="width:1000px;height:100%;" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${cards.title}</h5>
+              <p class="card-text">${cards.details.slice(0,200)}....</p>
+              <div class="d-flex justify-content-between mt-4">
+                    <div class="d-flex">
+                      
+                            <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
+                        <div class="ms-3">
+                            <h6>${cards.author.name}</h6>
+                            <p>${cards.author.published_date}</p>
+                        </div>
                     </div>
-                  </div>
-     </div>`
+                            
+                     <div>
+                        <p>View: ${cards.total_view}</p>
+                     </div>   
+                
+              </div>
+            </div>
+          </div>
+          </div>
+        `
+  
    
+        cardContainer.appendChild(creatNewDiv)
 
-cardContainer.appendChild(creatNewDiv)
 })
 }
 
