@@ -6,17 +6,25 @@ fetch('https://openapi.programming-hero.com/api/news/categories')
 }
 const displayNews = newsitems => {
    const newsContainer=document.getElementById('news-container');
+
+   
    newsitems.forEach(news =>{
     // console.log(news)
   
 const creatDiv=document.createElement('div');
+
+toggleSpinner(true);
 creatDiv.innerHTML=`
-<div class="navbar-nav">
-              <a onclick="loadNewsTitle('${news.category_id}')"class="nav-link active" aria-current="page" href="#">${news.category_name}</a>
+<ul class="navbar-nav">
+              <li class="nav-item">
+                <a onclick="loadNewsTitle('${news.category_id}')"  class="nav-link active" aria-current="page" href="#">${news.category_name}</a>
+              </li>
              
-            </div>
-`
-     newsContainer.appendChild(creatDiv)
+            </ul>`
+            
+     newsContainer.appendChild(creatDiv);
+
+     
   })
 
 }
@@ -34,10 +42,12 @@ const loadNewsTitle=(category_id)=>{
 const newsTitle=newsCards=>{
    
     const cardContainer=document.getElementById('cards');
+
+    
     cardContainer.innerHTML=``;
     newsCards.forEach(cards =>{
       console.log(cards)
-    
+      toggleSpinner(false);
    const creatNewDiv=document.createElement('div');
    creatNewDiv.innerHTML=`
   <div class="row g-0 mb-5" style="border-top:1px solid gray;border-bottom:1px solid gray;">
@@ -53,7 +63,7 @@ const newsTitle=newsCards=>{
                       
                             <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
                         <div class="ms-3">
-                            <h6>${cards.author.name}</h6>
+                            <h6>${cards.author.name ? cards.author.name:'No name'}</h6>
                             <p>${cards.author.published_date}</p>
                         </div>
                     </div>
@@ -72,7 +82,22 @@ const newsTitle=newsCards=>{
         cardContainer.appendChild(creatNewDiv)
 
 })
+
+
+
+
+
 }
 
 
-loadNews('')
+
+const toggleSpinner=isLoading=>{
+  const loaderSection=document.getElementById('loader');
+  if(isLoading){
+    loaderSection.classList.remove('d-none')
+  }
+}
+
+loadNews()
+
+
