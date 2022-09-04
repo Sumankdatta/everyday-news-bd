@@ -1,17 +1,16 @@
 const loadNews=()=>{
-  
-fetch('https://openapi.programming-hero.com/api/news/categories')
+  fetch('https://openapi.programming-hero.com/api/news/categories')
     .then(res => res.json())
     .then(data =>displayNews(data.data.news_category))
     .catch(error=>console.log(error))
 }
+
+
 const displayNews = newsitems => {
   
    const newsContainer=document.getElementById('news-container');
    
-   
    newsitems.forEach(news =>{
-   
   
 const creatDiv=document.createElement('div');
 
@@ -29,14 +28,10 @@ creatDiv.innerHTML=`
      
   })
 
+
 }
 
-const toggleSpinner=isLoading=>{
-  const loaderSection=document.getElementById('loader');
-  if(isLoading){
-    loaderSection.classList.remove('d-none')
-  }
-}
+
 
 const loadNewsTitle=(category_id)=>{
  
@@ -52,9 +47,20 @@ const loadNewsTitle=(category_id)=>{
 const newsTitle=newsCards=>{
    
     const cardContainer=document.getElementById('cards');
+    
 
     
     cardContainer.innerHTML=``;
+
+    newsCards = newsCards.slice(0,40);
+    const noItems=document.getElementById('no-items');
+    if(newsCards.length === 0){
+      noItems.classList.remove('d-none')
+    }
+    else{
+      noItems.classList.add('d-none')
+    }
+
     newsCards.forEach(cards =>{
    
      
@@ -93,6 +99,11 @@ const newsTitle=newsCards=>{
         cardContainer.appendChild(creatNewDiv)
 
 })
+const searchField=document.getElementById('input');
+const field=newsCards .length;
+// console.log(field)
+searchField.value=field +'  ' +'Items found'
+
 
 }
 
@@ -108,7 +119,7 @@ const displayNewsLoad=(_id)=>{
 const displayNewsDetail=cards=>{
   
   const newCardsContainer=document.getElementById('detail-card');
- 
+  
   
   newCardsContainer.innerHTML=``;
   const creatDivContainer=document.createElement('div');
@@ -131,7 +142,7 @@ const displayNewsDetail=cards=>{
       </div>
               
        <div>
-          <p>View: ${cards.total_view}</p>
+          <p>View: ${cards.total_view ? cards.total_view:'No view'}</p>
        </div>   
   
 </div>
@@ -141,8 +152,15 @@ const displayNewsDetail=cards=>{
 </div>`
 
         newCardsContainer.appendChild(creatDivContainer) 
-
+       
 }
+const toggleSpinner=isLoading=>{
+  const loaderSection=document.getElementById('loader');
+  if(isLoading){
+    loaderSection.classList.remove('d-none')
+  }
+}
+
 
 
 
