@@ -123,18 +123,18 @@ const displayNewsDetail=cards=>{
   <div class="d-flex d-flex justify-content-around mt-4">
           <div class="d-flex">
             
-                  <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
-              <div class="ms-3">
-                  <h6>${cards.author.name ? cards.author.name:'No name'}</h6>
-                  <p>${cards.author.published_date}</p>
-              </div>
+          <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
+          <div class="ms-3">
+              <h6>${cards.author.name ? cards.author.name:'No name'}</h6>
+              <p>${cards.author.published_date}</p>
           </div>
-                  
-           <div>
-              <p>View: ${cards.total_view}</p>
-           </div>   
-      
-    </div>
+      </div>
+              
+       <div>
+          <p>View: ${cards.total_view}</p>
+       </div>   
+  
+</div>
 
 
 </div>
