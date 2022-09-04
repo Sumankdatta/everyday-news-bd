@@ -10,104 +10,87 @@
     
 </head>
 <body>
+  <header>
+    <!-- nav bar section starts -->
     <section class="container">
-        <nav class="navbar navbar-expand-lg bg-light px-5">
-            <div class="container-fluid">
-              <a class=" border p-2 bg-primary text-white navbar-brand rounded" href="#">Everyday</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class=" navbar-brand nav-link active  text-primary" aria-current="page" href="#">News </a>
-                  </li>
-                
-                </ul>
-                <form class="d-flex" role="search">
-                    
-                    
-                    <a class="navbar-brand text-primary active" >News</a>
-                    <a class="navbar-brand  active border p-2 bg-primary text-white navbar-brand rounded" href="news.html">Blog</a>
-                   
+      <nav class="navbar navbar-expand-lg bg-light px-5">
+          <div class="container-fluid">
+            <a class=" border p-2 bg-primary text-white navbar-brand rounded" href="#">Everyday</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class=" navbar-brand nav-link active  text-primary" aria-current="page" href="#">News </a>
+                </li>
+              
+              </ul>
+              <form class="d-flex" role="search">
                   
-                </form>
-              </div>
+                  
+                  <a class="navbar-brand text-primary active" >News</a>
+                  <a class="navbar-brand  active border p-2 bg-primary text-white navbar-brand rounded" href="news.html">Blog</a>
+                 
+                
+              </form>
             </div>
-          </nav>
-          <hr>
-    </section>
-    
+          </div>
+        </nav>
+        <hr>
+  </section>
+    <!-- nav bar section ends -->
+    <!-- menue bar starts-->
     <section class="container mt-3">
 
-<div class="row">
-  <div id="news-container" class="d-flex justify-content-around fw-semibold flex-direction-column col-sm-12">
-
-  </div>
-</div>
-
-      <!-- <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div id="news-container" class="collapse navbar-collapse" id="navbarNav">
-            
-          </div>
+      <div class="row">
+        <div id="news-container" class="d-flex justify-content-around fw-semibold flex-direction-column col-sm-12">
+      
         </div>
-      </nav>  -->
-                   
-   
-
-   
+      </div>
+      </section>
+    <!-- menue bar ends-->
+    </header>
+   <main>
     <!-- input section  -->
     <section class="container mt-4">
       <div class="input-group input-group-lg">
-        <!-- <span class="input-group-text" id="inputGroup-sizing-lg"></span> -->
+
         <input id="input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
       </div>
     </section>
-    <!-- details cards starts -->
+    <!-- input section ends -->
+    
 
 
+<!-- spinner loader starts  -->
 
-  </section>
-  <section id="loader" class="d-none">
-    <div class="d-flex justify-content-center align-items-center">
-      <div class="spinner-border text-success" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
+<section id="loader" class="d-none">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- spinner loader ends -->
+ 
 
+ <!-- Button trigger modal -->
     <section class="container">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div id="detail-card" class="modal-dialog">
+        
+          </div>
       
-
-
-        
-
-        <!-- Button trigger modal -->
-
-        
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div id="detail-card" class="modal-dialog">
-      
-    </div>
-  
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-
-        
       </div>
+        <!-- Button trigger end -->
 
     </section>
     <!-- details cards end -->
 
+
+    <!-- error message starts -->
 
     <section class="container mb-5">
       <div  id="cards"class="card mb-3 mb-5 mt-5" style="max-width: 1200px;">
@@ -117,15 +100,12 @@
         <h3 class="text-primary">NO Items Found.please try a new search.</h3>
       </div>
     </section>
-    <!-- modal  -->
-    <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
 
 
+    <!-- error message end -->
+   
+
+</main>
 
 
 <!-- footer  -->
@@ -142,66 +122,3 @@
 </body>
 </html>
 
-<!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-
-
-<!-- <div class="card mb-3">
-  <img src="${cards.image_url ? cards.image_url: 'no'}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${cards.title}</h5>
-    <p class="card-text">${cards.details}</p>
-    <div class="d-flex d-flex justify-content-around mt-4">
-            <div class="d-flex">
-              
-            <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
-            <div class="ms-3">
-                <h6>${cards.author.name ? cards.author.name:'No name'}</h6>
-                <p>${cards.author.published_date}</p>
-            </div>
-        </div>
-                
-         <div>
-            <p>View: ${cards.total_view ? cards.total_view:'No view'}</p>
-         </div>   
-    
-  </div>
-  
-  
-  </div>
-  </div>
- -->
-
-
-
-
- <!-- blog  -->
-
-  <!-- <button type="button" class="btn btn-primary" href="news.html">
-                      Blog
-                    </button> -->
-                    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Some question</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <p>1 . Difference Between var, let, and const</p><br>
-                            <p>. In the var tab, when you will run the code, you will see an error as a is not defined because var variables are only accessible in the function scope.<br>
-                              . In the let tab, when you run the code, you will see an error as i is not defined because let variables are only accessible within the block they are declared<br>
-                              . In the const tab, when you run the code, you will see that x was defined under the block was accessible, but when you try to access x outside that block, you will get an error<p>
-                                <p>2.Difference Between arro function and regular function?</p><br>
-                                <p>Unlike regular functions, arrow functions do not have their own this . The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function.</p><br>
-                                <p>3. why we use template string?</p><br>
-                                <p>
-                                  Template string are a new feature introduced in ECMAScript 2015/ ES6. It provides an easy way to create multiline strings and perform string interpolation. Template literals are the string literals and allow embedded expressions. Before ES6, template literals were called as template strings.</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                      -->
