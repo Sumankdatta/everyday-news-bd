@@ -112,7 +112,7 @@ const field=newsCards .length;
 // console.log(field)
 searchField.value=field +'  ' +'Items found'
 
-toggleSpinner(false)
+toggleSpinner(false);
 
 }
 
@@ -172,14 +172,14 @@ const displayNewsDetail=cards=>{
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div>
-      </div>
+      </div>`
   
-  
-  `
 
         newCardsContainer.appendChild(creatDivContainer) 
        
 }
+
+
 const toggleSpinner=isLoading=>{
   const loaderSection=document.getElementById('loader');
   if(isLoading){
@@ -193,10 +193,7 @@ const toggleSpinner=isLoading=>{
 
 
 
-
-
-
-loadNews('03')
+loadNews()
 loadNewsTitle('01')
 
 
