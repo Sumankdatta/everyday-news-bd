@@ -50,6 +50,30 @@
         </div>
       </nav>              
     </section>
+    <!-- input section  -->
+    <section class="container mt-4">
+      <div class="input-group input-group-lg">
+        <!-- <span class="input-group-text" id="inputGroup-sizing-lg"></span> -->
+        <input id="input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      </div>
+    </section>
+    <!-- details cards starts -->
+
+    <section class="container">
+      <div id="detail-card">
+
+        <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+
+        
+      </div>
+
+    </section>
+    <!-- details cards end -->
 
 
     <section class="container mb-5">
@@ -68,7 +92,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Some question</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -103,3 +127,30 @@
     <script src="js/news.js"></script>
 </body>
 </html>
+
+
+
+<!-- <div class="card mb-3">
+  <img src="${cards.image_url ? cards.image_url: 'no'}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${cards.title}</h5>
+    <p class="card-text">${cards.details}</p>
+    <div class="d-flex d-flex justify-content-around mt-4">
+            <div class="d-flex">
+              
+                    <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
+                <div class="ms-3">
+                    <h6>${cards.author.name ? cards.author.name:'No name'}</h6>
+                    <p>${cards.author.published_date}</p>
+                </div>
+            </div>
+                    
+             <div>
+                <p>View: ${cards.total_view}</p>
+             </div>   
+        
+      </div>
+
+
+  </div>
+</div> -->
