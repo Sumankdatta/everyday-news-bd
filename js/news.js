@@ -150,6 +150,6 @@ const displayNewsDetail=cards=>{
 
 
 loadNews('03')
-
+loadNewsTitle('01')
 
 
