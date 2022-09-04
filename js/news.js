@@ -130,7 +130,37 @@ const displayNewsDetail=cards=>{
   
   creatDivContainer.innerHTML=`
   
+  <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">${cards.title}</h4>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <img src="${cards.image_url ? cards.image_url: 'no'}" class="card-img-top" alt="...">
+        <p class="card-text">${cards.details}</p>
+        <div class="d-flex d-flex justify-content-around mt-4">
+            <div class="d-flex">
+              
+            <img src="${cards.author.img}" class="rounded-circle" style="height:50px;width:50px;" alt="...">
+            <div class="ms-3">
+                <h6>${cards.author.name ? cards.author.name:'No name'}</h6>
+                <p>${cards.author.published_date}</p>
+            </div>
+        </div>
+                
+         <div>
+            <h6>Views: ${cards.total_view ? cards.total_view:'No views'}</h6>
+         </div>   
+    
+  </div>
   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
   
   
   `
