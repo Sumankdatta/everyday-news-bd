@@ -1,15 +1,17 @@
 const loadNews=()=>{
-
+  
 fetch('https://openapi.programming-hero.com/api/news/categories')
     .then(res => res.json())
     .then(data =>displayNews(data.data.news_category))
+    .catch(error=>console.log(error))
 }
 const displayNews = newsitems => {
+  
    const newsContainer=document.getElementById('news-container');
-
-   toggleSpinner(true);
+   
+   
    newsitems.forEach(news =>{
-    // console.log(news)
+   
   
 const creatDiv=document.createElement('div');
 
@@ -19,9 +21,9 @@ creatDiv.innerHTML=`
               <li class="nav-item">
                 <a onclick="loadNewsTitle('${news.category_id}')"  class="nav-link active" aria-current="page" href="#">${news.category_name}</a>
               </li>
-             
-            </ul>`
             
+            </ul>`
+           
      newsContainer.appendChild(creatDiv);
 
      
@@ -29,8 +31,15 @@ creatDiv.innerHTML=`
 
 }
 
+const toggleSpinner=isLoading=>{
+  const loaderSection=document.getElementById('loader');
+  if(isLoading){
+    loaderSection.classList.remove('d-none')
+  }
+}
+
 const loadNewsTitle=(category_id)=>{
-  // console.log(category_id)
+ 
   const url=`https://openapi.programming-hero.com/api/news/category/${category_id}`
   console.log(url)
   fetch(url)
@@ -47,7 +56,7 @@ const newsTitle=newsCards=>{
     
     cardContainer.innerHTML=``;
     newsCards.forEach(cards =>{
-      console.log(cards)
+   
      
    const creatNewDiv=document.createElement('div');
    creatNewDiv.innerHTML=`
@@ -97,13 +106,13 @@ const displayNewsLoad=(_id)=>{
 
 }
 const displayNewsDetail=cards=>{
-  console.log()
+  
   const newCardsContainer=document.getElementById('detail-card');
-
+ 
   
   newCardsContainer.innerHTML=``;
   const creatDivContainer=document.createElement('div');
-  // creatDivContainer.classList.add('cardss')
+  
   creatDivContainer.innerHTML=`
   
 <div class="card mb-3">
@@ -140,26 +149,7 @@ const displayNewsDetail=cards=>{
 
 
 
-// const inputField=inputREceive=>{
-
-//   const loadInput=dicument.getElementById('input');
-//   console.log(loadInput)
-//   loadInput.innertext=`${News.details.length}`
-  
-              
-
-// }
-
-
-
-const toggleSpinner=isLoading=>{
-  const loaderSection=document.getElementById('loader');
-  if(isLoading){
-    loaderSection.classList.remove('d-none')
-  }
-}
-
-loadNews()
+loadNews('03')
 
 
 
