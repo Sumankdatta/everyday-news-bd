@@ -13,14 +13,14 @@
     <section class="container">
         <nav class="navbar navbar-expand-lg bg-light px-5">
             <div class="container-fluid">
-              <a class=" btn btn-primary text-white navbar-brand " href="#">News</a>
+              <a class=" border p-2 bg-primary text-white navbar-brand rounded" href="#">Everyday</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class=" navbar-brand nav-link active  text-primary" aria-current="page" href="#">Everyday</a>
+                    <a class=" navbar-brand nav-link active  text-primary" aria-current="page" href="#">News </a>
                   </li>
                 
                 </ul>
@@ -28,18 +28,22 @@
                     
                     
                     <a class="navbar-brand text-primary active" >News</a>
-                    <a style="border:1px solid blue; color:white;background-color: blue; padding:5px;"class="navbar-brand  active" href="news.html">Blog</a>
+                    <a class="navbar-brand  active border p-2 bg-primary text-white navbar-brand rounded" href="news.html">Blog</a>
                    
                   
                 </form>
               </div>
             </div>
           </nav>
+          <hr>
     </section>
-    <section class="container ">
+    
+    <section class="container mt-3">
 
-<div id="news-container" class="d-flex justify-content-around">
+<div class="row">
+  <div id="news-container" class="d-flex justify-content-around fw-semibold flex-direction-column col-sm-12">
 
+  </div>
 </div>
 
       <!-- <nav class="navbar navbar-expand-lg bg-light">
@@ -54,7 +58,9 @@
         </div>
       </nav>  -->
                    
-    </section>
+   
+
+   
     <!-- input section  -->
     <section class="container mt-4">
       <div class="input-group input-group-lg">
@@ -63,6 +69,18 @@
       </div>
     </section>
     <!-- details cards starts -->
+
+
+
+  </section>
+  <section id="loader" class="d-none">
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </section>
+
 
     <section class="container">
       
@@ -92,11 +110,11 @@
 
 
     <section class="container mb-5">
-      <div  id="cards"class="card mb-3 mb-5 mt-5" style="max-width: 1000px;">
+      <div  id="cards"class="card mb-3 mb-5 mt-5" style="max-width: 1200px;">
         
       </div>
       <div id="no-items" class="mt-4 d-none">
-        <h3 class="text-warning">NO Items Found.please try a new search.</h3>
+        <h3 class="text-primary">NO Items Found.please try a new search.</h3>
       </div>
     </section>
     <!-- modal  -->
@@ -109,13 +127,7 @@
 
 
 
-<section id="loader" class="d-none">
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="spinner-border text-success" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-</section>
+
 <!-- footer  -->
 <div class="card text-center">
   <div class="card-header">

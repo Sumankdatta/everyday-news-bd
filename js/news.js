@@ -1,8 +1,8 @@
-const loadNews=()=>{
-  fetch('https://openapi.programming-hero.com/api/news/categories')
-    .then(res => res.json())
-    .then(data =>displayNews(data.data.news_category))
-    .catch(error=>console.log(error))
+const loadNews=async()=>{
+  const url ='https://openapi.programming-hero.com/api/news/categories'
+  const res=await fetch(url);
+  const data=await res.json();
+  displayNews(data.data.news_category)
 }
 
 
@@ -33,14 +33,17 @@ creatDiv.innerHTML=`
 
 
 
-const loadNewsTitle=(category_id)=>{
+
+
+  const loadNewsTitle=async(category_id)=>{
+    toggleSpinner(true);
+    const url =`https://openapi.programming-hero.com/api/news/category/${category_id}`
+    const res=await fetch(url);
+    const data=await res.json();
+    newsTitle(data.data)
+
+
  
-  const url=`https://openapi.programming-hero.com/api/news/category/${category_id}`
-  console.log(url)
-  fetch(url)
-  .then(res => res.json())
-  .then(data =>newsTitle(data.data))
-  
 }
 
 
@@ -102,14 +105,17 @@ const newsTitle=newsCards=>{
    
         cardContainer.appendChild(creatNewDiv)
 
+
 })
 const searchField=document.getElementById('input');
 const field=newsCards .length;
 // console.log(field)
 searchField.value=field +'  ' +'Items found'
 
+toggleSpinner(false)
 
 }
+
 
 const displayNewsLoad=(_id)=>{
   console.log('click',_id)
@@ -120,6 +126,12 @@ const displayNewsLoad=(_id)=>{
   .then(data => displayNewsDetail(data.data[0]))
 
 }
+  
+  
+ 
+
+
+
 const displayNewsDetail=cards=>{
   
   const newCardsContainer=document.getElementById('detail-card');
@@ -172,6 +184,9 @@ const toggleSpinner=isLoading=>{
   const loaderSection=document.getElementById('loader');
   if(isLoading){
     loaderSection.classList.remove('d-none')
+  }
+  else{
+    loaderSection.classList.add('d-none')
   }
 }
 
